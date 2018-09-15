@@ -16,11 +16,11 @@
         <li class="main-menu-item">
           <a href="catalog.html">Каталог</a>
           <ul class="submenu">
-            <li class="submenu-item"><strong>Новинки</strong></li>
-            <li class="submenu-item">Сливочное</li>
-            <li class="submenu-item">Щербеты</li>
-            <li class="submenu-item">Фруктовый лед</li>
-            <li class="submenu-item">Мелорин</li>
+            <li class="submenu-item"><a href="#"><strong>Новинки</strong></a></li>
+            <li class="submenu-item"><a href="#">Сливочное</a></li>
+            <li class="submenu-item"><a href="#">Щербеты</a></li>
+            <li class="submenu-item"><a href="#">Фруктовый лед</a></li>
+            <li class="submenu-item"><a href="#">Мелорин</a></li>
           </ul>
         </li>
         <li class="main-menu-item">
@@ -43,19 +43,23 @@
         </li>
         <li class="login-link">Вход
           <section class="modal modal-login">
-            <form action="#" method="post">
-              <input type="email" name="email" placeholder="Электронная почта">
-              <br>
-              <input type="password" name="password" placeholder="Пароль">
-              <br>
-              <input type="submit" value="Войти">
+            <form class="login-form" action="echo.htmlacademy.ru" method="post">
+              <p class="login-item">
+                <label class="visually-hidden" for="user-login">Электронная почта</label>
+                <input class="login-icon-user" id="user-login" type="email" name="email" value="" placeholder="Электронная почта">
+              </p>
+              <p class="password-item">
+                <label class="visually-hidden" for="user-password">Пароль</label>
+                <input class="password-icon-user" id="user-password" type="password" name="password" value="" placeholder="Пароль">
+              </p>
+              <button class="button" type="submit">Войти</button>
             </form>
             <ul>
               <li>
-                <a href="#">Забыли пароль?</a>
+                <a class="restore" href="#">Забыли пароль?</a>
               </li>
               <li>
-                <a href="#">Новая регистрация</a>
+                <a class="new-registory" href="#">Новая регистрация</a>
               </li>
             </ul>
           </section>
@@ -78,21 +82,24 @@
   </header>
   <main class="container">
     <section class="slider">
-      <ul class="slider-list">
-        <li class="slider-list-item">
+      <ul class="slides-switches">
+        <li class="slide-radio">
           <img src="img/slider-1.png" width="647" height="584" alt="Крем-брюле и пломбир  с малиновым джемом">
           <h1>Крем-брюле и пломбир  с малиновым джемом</h1>
-          <button>Давайте оба</button>
+          <button class="button" type="#">Давайте оба</button>
+          <button class="slide-btn">Третий слайд</button>
         </li>
-        <li class="slider-list-item">
+        <li class="slide-radio">
           <img src="img/slider-2.png" width="647" height="584" alt="Крем-брюле и пломбир  с малиновым джемом">
           <h1>Крем-брюле и пломбир  с малиновым джемом</h1>
-          <button>Давайте оба</button>
+          <button class="button" type="button">Давайте оба</button>
+          <button class="slide-btn">Третий слайд</button>
         </li>
-        <li class="slider-list-item">
+        <li class="slide-radio">
           <img src="img/slider-3.png" width="647" height="584" alt="Крем-брюле и пломбир  с малиновым джемом">
           <h1>Пломбир с помадкой и клубничный щербет</h1>
-          <button>Давайте оба</button>
+          <button class="button" type="#">Давайте оба</button>
+          <button class="slide-btn">Третий слайд</button>
         </li>
       </ul>
     </section>
@@ -102,13 +109,13 @@
           <img src="img/banner-background-1.jpg" width="830" height="450" alt="Малинка даром!">
           <h2 class="banner-name">Малинка даром!</h2>
           <p class="banner-info">При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья бесплатно.</p>
-          <button>Хочу варенье!</button>
+          <button class="button" type="button">Хочу варенье!</button>
         </li>
         <li class="banner-item">
           <img src="img/banner-background-2.jpg" width="830" height="450" alt="Шоколадки даром!">
           <h2 class="banner-name">Шоколадки даром!</h2>
           <p class="banner-info">При покупке 2 кг пломбира, добавим в ваш заказ упаковку вкуснейшей шоколадной присыпки совершенно бесплатно.</p>
-          <button>Хочу варенье!</button>
+          <button class="button" type="button">Хочу варенье!</button>
         </li>
       </ul>
 
@@ -196,19 +203,22 @@
       <article class="blog">
         <p class="blog-info">Новое в нашем блоге</p>
         <a href="#">10 способов сервировки фруктовых щербетов к столу</a>
-        <img src="#" alt="Картинка на фоне">
+        <img src="img/blog.jpg" width="866" height="790" alt="Картинка на фоне">
       </article>
 
       <section class="appointment">
         <p class="appointment-info">Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)</p>
-        <form action="#" method="post">
-          <input type="email" name="email" placeholder="Электронная почта">
-          <button>Отправить</button>
+        <form class="dispatch" action="#" method="post">
+          <p class="dispatch-item">
+            <label class="visually-hidden" for="user-email">Электронная почта</label>
+            <input class="email-dispatch-user" id="user-email" type="email" name="email" placeholder="Электронная почта">
+          </p>
+          <button class="button" type="submit">Отправить</button>
         </form>
       </section>
       <section class="map">
         <h2 class="visually-hidden">Контактная информация</h2>
-        <img src="#" alt="Карта">
+        <img src="img/map.jpg" width="1200" height="430" alt="ул. Большая Конюшенная 19/8, Санкт-Петербург">
         <p class="adress">Адрес главного офиса и офлайн-магазина:
           <br>
           <strong class="adress-details">ул. Большая Конюшенная 19/8, Санкт-Петербург</strong>
@@ -244,19 +254,26 @@
         <br>Сделано в HTML Academy © 2017
       </p>
   </footer>
-  <section class="modal modal-#">
-    <h2>Мы обязательно вам ответим</h2>
-    <form>
-      <input type="text" name="name" placeholder="Как вас зовут?">
-      <br>
-      <input type="text" name="mail" placeholder="Ваша почта для ответа?">
-      <br>
-      <textarea name="comment" id="comment-field" rows="7" cols="40" placeholder="Напишите что-нибудь..."></textarea>
-      <br>
-      <input type="submit" value="Отправить">
-      <!-- Здесь будет форма -->
+  <section class="modal modal-feedback">
+    <form class="feedback-form" action="echo.htmlacademy.ru" method="post">
+      <fieldset>
+        <legend>Мы обязательно вам ответим!</legend>
+        <p class="name-item">
+          <label class="visually-hidden" for="user-name">Имя</label>
+          <input class="name-icon-user" id="user-name" type="text" name="name" value="" placeholder="Как вам зовут?">
+        </p>
+        <p class="email-item">
+          <label class="visually-hidden" for="user-email">Почта</label>
+          <input class="email-icon-user" id="user-email" type="email" name="email" value="" placeholder="Ваша почта для ответа?">
+        </p>
+        <p class="comment-item">
+          <label class="visually-hidden" for="comment-field">Комментарий</label>
+          <textarea class="comment-icon-user" name="comment" id="comment-field" rows="7" cols="40" placeholder="Напишите что-нибудь..."></textarea>
+        </p>
+      </fieldset>
+      <button class="button" type="submit" value="">Отправить</button>
     </form>
-    <span class="modal-close">x</span>
+    <button class="modal-close" type="button">Закрытие</span>
   </section>
 </body>
 
