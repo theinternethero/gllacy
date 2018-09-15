@@ -8,7 +8,6 @@ body {
   line-height: 22px;
   font-weight: 500;
   color: #ffffff;
-  background-color: #87a092;
   min-width: 1200px;
 }
 
@@ -28,6 +27,87 @@ body {
 img {
   width: 100%;
   height: auto;
+}
+
+.site-wrapper {
+  min-width: 1200px;
+  background-color: #87a092;
+  background-image: url("../img/slider-1.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+  transition: background-image 0.5s ease, background-color 0.5s ease;
+}
+
+.site-wrapper::before, .site-wrapper::after {
+  content: "";
+  visibility: hidden;
+}
+
+.site-wrapper::before {
+  background-image: url("../img/slider-2.png");
+}
+
+.site-wrapper::after {
+  background-image: url("../img/slider-3.png");
+}
+
+.container {
+  width: 1137px;
+  padding: 0 27px;
+  margin: 0 auto;
+}
+
+.slider {
+  position: relative;
+  padding-top: 398px;
+  text-align: center;
+}
+
+.slide {
+  display: none;
+}
+
+.slider-controls {
+  position: absolute;
+  bottom: 63px;
+  left: 0;
+  z-index: 20;
+  font-size: 0;
+}
+
+.slider-controls label {
+  display: inline-block;
+  vertical-align: top;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#product-1:checked~.site-wrapper {
+  background-color: #849d8f;
+  background-image: url(../img/slider-1.png);
+}
+
+#product-2:checked~.site-wrapper {
+  background-color: #8996a6;
+  background-image: url(../img/slider-2.png);
+}
+
+#product-3:checked~.site-wrapper {
+  background-color: #9d8b84;
+  background-image: url(../img/slider-3.png);
+}
+
+#product-1:checked~.site-wrapper #slide1, #product-2:checked~.site-wrapper #slide2, #product-3:checked~.site-wrapper #slide3 {
+  display: block;
+}
+
+#product-1:checked~.site-wrapper label[for="product-1"], #product-2:checked~.site-wrapper label[for="product-2"], #product-3:checked~.site-wrapper label[for="product-3"] {
+  background-color: #ffffff;
 }
 
 .main-navigation {
@@ -199,13 +279,12 @@ img {
 
 .cart-link .button {
   position: relative;
-  padding-left: 35px;
+  padding-left: 44px;
 }
 
 .cart-link .button::before {
   content: "";
   position: absolute;
-  top: 8px;
   left: 10px;
   width: 21px;
   height: 20px;
@@ -248,29 +327,26 @@ img {
 }
 
 .modal-login .button {
-  display: inline-block;
-  vertical-align: top;
-  padding: 10px 25px;
-  font-weight: 700;
   font-size: 18px;
   line-height: 24px;
+  font-weight: 700;
   text-align: center;
   color: #fefefe;
-  text-shadow: 0px 2px 5px rgba(160, 32, 11, 0.76);
-  background-image: linear-gradient(to bottom, #f26843 0%, #e74a35 100%);
-  box-shadow: 0px 2px 2px rgba(172, 16, 0, 0.64);
+  vertical-align: middle;
+  background-image: linear-gradient( 90deg, rgb(202, 56, 36) 0%, rgb(242, 104, 67) 100%);
+  box-shadow: 0px 2px 2px 0px rgba(85, 8, 0, 0.54);
   border: none;
-  border-radius: 50px;
+  border-radius: 20px;
 }
 
 .modal-login .button:hover, .modal-login .button:focus {
-  background-image: linear-gradient(to bottom, #f58669 0%, #ec6f5e 100%);
-  box-shadow: 0px 2px 2px rgba(172, 16, 0, 1);
+  background-image: linear-gradient( 90deg, rgb(231, 74, 53) 0%, rgb(242, 104, 67) 100%);
+  box-shadow: 0px 1px 2px 0px rgba(172, 16, 0, 0.004);
 }
 
 .modal-login .button:active {
-  background-image: linear-gradient(to bottom, #d84732 0%, #e1613e 100%);
-  box-shadow: inset 0px 2px 2px rgba(172, 16, 0, 1);
+  background-image: linear-gradient( 90deg, rgb(242, 104, 67) 0%, rgb(231, 74, 53) 100%);
+  box-shadow: inset 0px 2px 2px 0px rgba(148, 39, 24, 0.004);
 }
 
 .user-navigation input::placeholder, .user-navigation label {
@@ -295,12 +371,6 @@ img {
   line-height: 24px;
 }
 
-.container {
-  width: 1137px;
-  padding: 0 27px;
-  margin: 0 auto;
-}
-
 .slides-switches {
   display: flex;
   flex-direction: column;
@@ -311,14 +381,16 @@ img {
 }
 
 .slider h1 {
+  width: 793px;
+  font-weight: 800;
+  margin: 0 auto;
+  margin-bottom: 27px;
   font-size: 60px;
   line-height: 60.35px;
-  text-align: center;
 }
 
 .slide-radio .button {
   display: inline-block;
-  vertical-align: top;
   padding: 12px 44px;
   font-weight: 700;
   font-size: 32px;
@@ -343,31 +415,6 @@ img {
   background-image: linear-gradient(to bottom, #d84732 0%, #e1613e 100%);
   box-shadow: inset 0px 2px 2px rgba(172, 16, 0, 1);
 }
-
-/*.slide-radio:nth-child(1) {
-  background-image: url(../img/slider-1.png);
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  width: 1045px;
-  min-height: 881px;
-}
-
-.slide-radio:nth-child(2) {
-  background-image: url(../img/slider-2.png);
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  width: 1045px;
-  min-height: 881px;
-}
-
-.slide-radio:nth-child(3) {
-  background-image: url(../img/slider-3.png);
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  width: 1045px;
-  min-height: 881px;
-}
-*/
 
 .banner-list {
   display: flex;
@@ -405,29 +452,27 @@ img {
 }
 
 .banners .button {
-  display: inline-block;
-  vertical-align: top;
-  padding: 15px 20px;
-  font-weight: 700;
   font-size: 18px;
   line-height: 24px;
+  font-weight: 700;
   text-align: center;
   color: #ffffff;
-  text-shadow: 0px 2px 5px rgba(160, 32, 11, 0.76);
-  background-image: linear-gradient(to bottom, #f26843 0%, #e74a35 100%);
-  box-shadow: 0px 2px 2px rgba(172, 16, 0, 0.64);
+  vertical-align: middle;
+  background-image: linear-gradient( 90deg, rgb(202, 56, 36) 0%, rgb(242, 104, 67) 100%);
+  opacity: 0.988;
+  box-shadow: 0px 2px 2px 0px rgba(85, 8, 0, 0.54);
   border: none;
-  border-radius: 50px;
+  border-radius: 20px;
 }
 
 .banners .button:hover, .banners .button:hover:focus {
-  background-image: linear-gradient(to bottom, #f58669 0%, #ec6f5e 100%);
-  box-shadow: 0px 2px 2px rgba(172, 16, 0, 1);
+  background-image: linear-gradient( 90deg, rgb(231, 74, 53) 0%, rgb(242, 104, 67) 100%);
+  box-shadow: 0px 1px 2px 0px rgba(172, 16, 0, 0.004);
 }
 
 .banners .button:active {
-  background-image: linear-gradient(to bottom, #d84732 0%, #e1613e 100%);
-  box-shadow: inset 0px 2px 2px rgba(172, 16, 0, 1);
+  background-image: linear-gradient( 90deg, rgb(242, 104, 67) 0%, rgb(231, 74, 53) 100%);
+  box-shadow: inset 0px 2px 2px 0px rgba(148, 39, 24, 0.004);
 }
 
 .hits p {
@@ -720,6 +765,11 @@ img {
   color: #ffbc9e;
 }
 
+.footer-link img {
+  width: 15px;
+  height: 13px;
+}
+
 .footer-copyright {
   margin: 0;
   width: 267px;
@@ -728,11 +778,6 @@ img {
 .footer-logo img {
   width: 108px;
   height: 39px;
-}
-
-.footer-links img {
-  width: 15px;
-  height: 13px;
 }
 
 /* СДЕЛАНО НИЖЕ */
