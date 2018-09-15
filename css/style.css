@@ -59,8 +59,9 @@ img {
 
 .slider {
   position: relative;
-  padding-top: 398px;
+  padding-top: 286px;
   text-align: center;
+  margin-bottom: 40px;
 }
 
 .slide {
@@ -86,6 +87,8 @@ img {
   border-radius: 50%;
   cursor: pointer;
 }
+
+.slider-controls label:hover, .slider-controls label:focus {}
 
 #product-1:checked~.site-wrapper {
   background-color: #849d8f;
@@ -658,7 +661,9 @@ img {
   background-repeat: no-repeat;
   width: 1200px;
   height: 430px;
+  margin: 0 auto;
   margin-bottom: 35px;
+  padding: 0;
 }
 
 .map fieldset {
