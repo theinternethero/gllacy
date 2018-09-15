@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 
 <head>
@@ -37,7 +37,7 @@
         <li class="search-link">
           <a class="button" href="#">Поиск</a>
           <section class="modal modal-search">
-            <fieldset>
+            <fieldset class="modal-search">
               <legend class="visually-hidden"></legend>
               <form class="search-item" action="echo.htmlacademy.ru" method="get">
                 <input id="user-search" type="search" name="search" placeholder="Что ищем?">
@@ -49,7 +49,7 @@
         <li class="login-link">
           <a class="button" href="#">Вход</a>
           <section class="modal modal-login">
-            <fieldset>
+            <fieldset class="modal-login">
               <form class="login-form" action="echo.htmlacademy.ru" method="post">
                 <p class="login-item">
                   <label class="visually-hidden" for="user-login">Электронная почта</label>
@@ -75,13 +75,9 @@
         <li class="cart-link">
           <a class="button" href="#">Корзина</a>
           <section class="modal modal-cart">
-            <fieldset>
-              <legend>
-                <form>
-                  <!-- Здесь будет форма -->
-                </form>
-              </legend>
-            </fieldset>
+            <form>
+              <!-- Здесь будет форма -->
+            </form>
           </section>
         </li>
       </ul>
@@ -97,19 +93,16 @@
     <section class="slider">
       <ul class="slides-switches">
         <li class="slide-radio">
-          <img src="img/slider-1.png" width="647" height="584" alt="Крем-брюле и пломбир  с малиновым джемом">
           <h1>Крем-брюле и пломбир  с малиновым джемом</h1>
           <button class="button" type="#">Давайте оба</button>
           <button class="slide-btn">Первый слайд</button>
         </li>
         <li class="slide-radio">
-          <img src="img/slider-2.png" width="647" height="584" alt="Крем-брюле и пломбир  с малиновым джемом">
           <h1>Крем-брюле и пломбир  с малиновым джемом</h1>
           <button class="button" type="button">Давайте оба</button>
           <button class="slide-btn">Второй слайд</button>
         </li>
         <li class="slide-radio">
-          <img src="img/slider-3.png" width="647" height="584" alt="Крем-брюле и пломбир  с малиновым джемом">
           <h1>Пломбир с помадкой и клубничный щербет</h1>
           <button class="button" type="#">Давайте оба</button>
           <button class="slide-btn">Третий слайд</button>
@@ -228,17 +221,18 @@
       </section>
 
       <section class="map">
-        <h2 class="visually-hidden">Контактная информация</h2>
-        <img src="img/map.jpg" width="1200" height="430" alt="ул. Большая Конюшенная 19/8, Санкт-Петербург">
-        <p class="adress">Адрес главного офиса и офлайн-магазина:</p>
-        <strong class="adress-details">ул. Большая Конюшенная 19/8, Санкт-Петербург</strong>
-        <p class="phone">Для заказов по телефону:</p>
-        <strong class="phone-details">8 812 450-25-25</strong>
-        <br>
-        <p class="time">
-          (с 10 до 20 ежедневно)
-        </p>
-        <button>Форма обратной связи</button>
+        <fieldset>
+          <legend class="visually-hidden">Контактная информация</legend>
+          <p class="adress">Адрес главного офиса и офлайн-магазина:</p>
+          <strong class="adress-details">ул. Большая Конюшенная 19/8, Санкт-Петербург</strong>
+          <p class="phone">Для заказов по телефону:</p>
+          <strong class="phone-details">8 812 450-25-25</strong>
+          <br>
+          <p class="time">
+            (с 10 до 20 ежедневно)
+          </p>
+          <button>Форма обратной связи</button>
+        </fieldset>
       </section>
   </main>
   <footer>

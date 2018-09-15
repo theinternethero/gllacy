@@ -20,39 +20,35 @@ body {
 }
 
 .main-menu-item a {
-  color: #ffffff;
-  font-size: 16px;
   line-height: 18px;
   font-weight: 700;
+  color: #ffffff;
 }
 
 .main-menu-item-current {
-  background-color: #d07058;
   text-align: center;
   text-decoration: none;
 }
 
 .main-menu-item a:active {
+  text-align: center;
   color: #333333;
+  text-decoration: none;
   background-color: #ededed;
   box-shadow: inset 0px 2px 1px 0px rgba(105, 105, 105, 0.004);
-  text-align: center;
-  text-decoration: none;
 }
 
 .main-menu-item a:hover, .main-menu-item a:focus {
-  color: #333333;
-  background-color: #ededed;
   text-align: center;
+  color: #333333;
   text-decoration: none;
+  background-color: #ededed;
 }
 
 .submenu {
-  border-radius: 5px;
   background-color: rgb(248, 247, 244);
   box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
-  width: 143px;
-  height: 171px;
+  border-radius: 5px;
   display: none;
 }
 
@@ -61,10 +57,10 @@ body {
 }
 
 .submenu a {
-  color: #323232;
-  text-align: center;
-  text-decoration: none;
   font-weight: 400;
+  text-align: center;
+  color: #323232;
+  text-decoration: none;
 }
 
 .submenu a:hover, .submenu a:focus {
@@ -94,58 +90,62 @@ body {
   border: none;
 }
 
-.login-password-info a {
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 24px;
-  text-decoration: underline;
-  color: #323232;
-}
-
 .user-navigation a:focus, .user-navigation a:hover {
   background-color: #ffffff;
   color: #323232;
 }
 
-.login-password-info a:focus, .login-password-info a:hover, .login-password-info a:active {
-  color: #ffbc9e;
-}
-
 .modal-search fieldset {
-  border: none;
-  border-radius: 6px;
   background-color: #f8f7f4;
   box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
-  width: 341px;
-  height: 84px;
+  border: none;
+  border-radius: 6px;
+  display: none;
+}
+
+.search-link:hover .modal-search {
+  display: block;
 }
 
 .modal-login fieldset {
-  border: none;
-  border-radius: 6px;
   background-color: rgb(248, 247, 244);
   box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
-  width: 277px;
-  height: 214px;
+  border: none;
+  border-radius: 6px;
+  display: none;
+}
+
+.login-link:hover .modal-login {
+  display: block;
 }
 
 .login-password-info li {
   text-align: right;
 }
 
+.login-password-info a {
+  font-size: 13px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #323232;
+  text-decoration: underline;
+}
+
+.login-password-info a:focus, .login-password-info a:hover, .login-password-info a:active {
+  color: #ffbc9e;
+}
+
 .modal-login .button {
-  color: #fefefe;
   font-size: 18px;
   line-height: 24px;
   font-weight: 700;
   text-align: center;
+  color: #fefefe;
   vertical-align: middle;
-  border: none;
-  border-radius: 20px;
   background-image: linear-gradient( 90deg, rgb(202, 56, 36) 0%, rgb(242, 104, 67) 100%);
   box-shadow: 0px 2px 2px 0px rgba(85, 8, 0, 0.54);
-  width: 100px;
-  height: 44px;
+  border: none;
+  border-radius: 20px;
 }
 
 .modal-login .button:hover, .modal-login .button:focus {
@@ -158,19 +158,13 @@ body {
   box-shadow: inset 0px 2px 2px 0px rgba(148, 39, 24, 0.004);
 }
 
-.modal-cart fieldset {
-  border: none;
-  border-radius: 5px;
-  background-color: rgb(248, 247, 244);
-  box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
-  width: 539px;
-  height: 242px;
-}
-
-.user-navigation input::placeholder {
-  color: #999999;
+.user-navigation input::placeholder, .user-navigation label {
+  font: inherit;
   font-size: 14px;
   line-height: 24px;
+  font-weight: 400;
+  color: #999999;
+  /* Нужно задать рамку placeholder'у + прописать focus/hover/acive */
 }
 
 .schedule p {
@@ -183,7 +177,6 @@ body {
 .schedule .phone {
   font-size: 22px;
   line-height: 24px;
-  text-transform: uppercase;
 }
 
 .slides-switches {
@@ -199,28 +192,50 @@ body {
 .slide-radio .button {
   font-size: 32px;
   font-weight: 700;
-  color: #ffffff;
   line-height: 44px;
   text-align: center;
+  color: #ffffff;
+  vertical-align: middle;
   text-shadow: 0px 2px 5px rgba(160, 32, 11, 0.76);
   transform: matrix( 1.04013375779322, 0, 0, 1.04013375779322, 0, 0);
-  vertical-align: middle;
   background-image: linear-gradient( 90deg, rgb(231, 74, 53) 0%, rgb(242, 104, 67) 100%);
   box-shadow: 0px 2px 2px 0px rgba(172, 16, 0, 0.64);
-  width: 280px;
-  height: 65px;
   border: none;
   border-radius: 20px;
 }
 
 .slide-radio .button:hover, .slide-radio .button:focus {
-  background-image: linear-gradient( 90deg, rgb(231, 74, 53) 0%, rgb(242, 104, 67) 100%);
+  /* Градиент допилить, получается такой же */
   box-shadow: 0px 2px 2px 0px rgba(172, 16, 0, 0.004);
 }
 
 .slide-radio .button:active {
   background-image: linear-gradient( 90deg, rgb(242, 104, 67) 0%, rgb(231, 74, 53) 100%);
   box-shadow: inset 0px 2px 2px 0px rgba(148, 39, 24, 0.004);
+}
+
+.slide-radio:nth-child(1) {
+  background-image: url(../img/slider-1.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  width: 1045px;
+  height: 881px;
+}
+
+.slide-radio:nth-child(2) {
+  background-image: url(../img/slider-2.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  width: 1045px;
+  height: 881px;
+}
+
+.slide-radio:nth-child(3) {
+  background-image: url(../img/slider-3.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  width: 1045px;
+  height: 881px;
 }
 
 .banners ul {
@@ -230,7 +245,6 @@ body {
 .banners .banner-name {
   font-size: 35px;
   line-height: 41px;
-  text-align: left;
   font-weight: 700;
 }
 
@@ -241,8 +255,8 @@ body {
 
 .banner-item:nth-child(1) {
   background-image: url(../img/banner-background-1.jpg);
+  background-position: 0 0;
   background-repeat: no-repeat;
-  background-position: top center;
   width: 560px;
   height: 229px;
   border-radius: 15px;
@@ -250,8 +264,8 @@ body {
 
 .banner-item:nth-child(2) {
   background-image: url(../img/banner-background-2.jpg);
+  background-position: 0 0;
   background-repeat: no-repeat;
-  background-position: top center;
   width: 560px;
   height: 229px;
   border-radius: 15px;
@@ -261,14 +275,12 @@ body {
   font-size: 18px;
   line-height: 24px;
   font-weight: 700;
+  text-align: center;
   color: #ffffff;
   vertical-align: middle;
-  text-align: center;
   background-image: linear-gradient( 90deg, rgb(202, 56, 36) 0%, rgb(242, 104, 67) 100%);
   opacity: 0.988;
   box-shadow: 0px 2px 2px 0px rgba(85, 8, 0, 0.54);
-  width: 165px;
-  height: 46px;
   border: none;
   border-radius: 20px;
 }
@@ -292,31 +304,36 @@ body {
 .hits-list-item .button {
   font: inherit;
   font-size: 18px;
-  font-weight: 700;
-  color: #fefefe;
   line-height: 24px;
+  font-weight: 700;
   text-align: center;
+  color: #fefefe;
   vertical-align: middle;
   text-decoration: none;
-  border: none;
-  border-radius: 20px;
   background-image: linear-gradient( 90deg, rgb(231, 74, 53) 0%, rgb(242, 104, 67) 100%);
   box-shadow: 0px 1px 2px 0px rgba(172, 16, 0, 0.004);
-  width: 200px;
-  height: 44px;
-  display: none;
+  border: none;
+  border-radius: 20px;
 }
 
-.hits-list-item:hover .button, .hits-list-item:focus .button {
-  display: block;
+/* НЕ РАБОТАЕТ */
+
+.hits-list-item .button:hover, .hits-list-item .button:focus {
+  /* Допилить градиент, он не меняется */
+  box-shadow: 0px 2px 2px 0px rgba(172, 16, 0, 0.004);
+}
+
+/* НЕ РАБОТАЕТ */
+
+.hits-list-item .button:active {
+  background-image: linear-gradient( 90deg, rgb(242, 104, 67) 0%, rgb(231, 74, 53) 100%);
+  box-shadow: inset 0px 2px 2px 0px rgba(148, 39, 24, 0.004);
 }
 
 .hits-list b {
   font-size: 45px;
   line-height: 45px;
   font-weight: 700;
-  vertical-align: bottom;
-  text-align: left;
   text-shadow: 0px 1px 3px rgba(49, 50, 53, 0.5);
 }
 
@@ -324,8 +341,6 @@ body {
   font-size: 30px;
   line-height: 45px;
   font-weight: 700;
-  vertical-align: bottom;
-  text-align: left;
   text-shadow: 0px 1px 3px rgba(49, 50, 53, 0.5);
 }
 
@@ -335,38 +350,50 @@ body {
 
 .seo {
   background-image: url(../img/waffly.jpg);
+  background-position: top center;
   background-repeat: no-repeat;
-  width: 734px;
-  height: 433px;
-  border-radius: 10px;
+  width: 1146px;
+  height: 306px;
+  border-radius: 15px;
 }
 
 .seo h2 {
   font-size: 24px;
   line-height: 30px;
-  color: #323232;
   text-align: left;
-  vertical-align: top;
+  color: #323232;
 }
 
 .seo-features-item p {
+  font-weight: 400;
   color: #323232;
 }
 
 .blog {
   color: #323232;
   background-image: url(../img/blog.jpg);
+  background-position: 0 0;
   background-repeat: no-repeat;
   width: 560px;
   height: 220px;
-  border-radius: 10px;
+  border-radius: 15px;
 }
 
 .blog a {
   font-size: 24px;
-  font-weight: 700;
   line-height: 30px;
+  font-weight: 700;
   color: #323232;
+}
+
+/* ЗДЕСЬ Я ОСТАНОВИЛСЯ НАХУЙ */
+
+.appointment {
+  background-image: url(../img/email-bg.png);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  width: 560px;
+  height: 220px;
 }
 
 .appointment-info {
@@ -374,15 +401,15 @@ body {
   font-weight: 400;
 }
 
-input[type="email"]+label {
-  color: #999999;
-  font-weight: 400;
+.appointment input[type="email"]+label {
+  font: inherit;
   line-height: 24px;
+  font-weight: 400;
+  color: #999999;
 }
 
-input[type="email"]::placeholder {
+.appointment input[type="email"]::placeholder {
   font: inherit;
-  font-size: 16px;
   line-height: 24px;
   font-weight: 400;
   color: #999999;
@@ -399,32 +426,44 @@ input[type="email"]::placeholder {
   vertical-align: middle;
 }
 
+/* MAP сделан */
+
 .map {
   color: #323232;
+  background-image: url("../img/map.jpg");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  width: 1200px;
+  height: 430px;
+}
+
+.map fieldset {
+  background-color: #fefdfd;
+  border: none;
+  border-radius: 15px;
 }
 
 .map .adress {
   font-size: 14px;
-  font-weight: 400;
   line-height: 20px;
+  font-weight: 400;
 }
 
 .map .adress-details {
   font-size: 18px;
-  font-weight: 700;
   line-height: 24px;
+  font-weight: 700;
 }
 
 .map .phone {
   font-size: 14px;
-  font-weight: 400;
   line-height: 20px;
+  font-weight: 400;
 }
 
 .map .phone-details {
   font-size: 18px;
   font-weight: 700;
-  line-height: 22px;
 }
 
 .map .time {
@@ -436,20 +475,27 @@ input[type="email"]::placeholder {
   font: inherit;
   font-size: 18px;
   line-height: 24px;
-  color: #fefefe;
+  font-weight: 700;
   text-align: center;
+  color: #fefefe;
   vertical-align: middle;
-  border: none;
-  border-radius: 15px;
   background-image: linear-gradient( 90deg, rgb(231, 74, 53) 0%, rgb(242, 104, 67) 100%);
   box-shadow: 0px 2px 2px 0px rgba(172, 16, 0, 0.64);
-  width: 252px;
-  height: 44px;
+  border: none;
+  border-radius: 15px;
 }
 
 .map button:focus, .map button:hover {
-  /* Надо делать */
+  /* Допилить градиент, он не меняется */
+  box-shadow: 0px 2px 2px 0px rgba(172, 16, 0, 0.004);
 }
+
+.map button:active {
+  background-image: linear-gradient( 90deg, rgb(242, 104, 67) 0%, rgb(231, 74, 53) 100%);
+  box-shadow: inset 0px 2px 2px 0px rgba(148, 39, 24, 0.004);
+}
+
+/* footer сделан */
 
 .footer-social {
   text-align: left;
@@ -474,10 +520,10 @@ input[type="email"]::placeholder {
 }
 
 .footer-links a {
-  color: #ffffff;
   font-size: 13px;
   font-weight: 400;
   line-height: 18px;
+  color: #ffffff;
 }
 
 .footer-links a:hover, .footer-links a:focus, .footer-links a:active {
@@ -488,12 +534,12 @@ input[type="email"]::placeholder {
   text-align: right;
 }
 
+/* НЕ СДЕЛАНО НИЖЕ */
+
 .modal-feedback {
-  border: none;
-  border-radius: 10px;
   background-color: rgb(248, 247, 244);
-  width: 478px;
-  height: 443px;
+  border: none;
+  border-radius: 15px;
 }
 
 .modal-feedback h3 {
