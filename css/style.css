@@ -77,6 +77,7 @@ img {
 }
 
 .slider-controls label {
+  position: relative;
   display: inline-block;
   vertical-align: top;
   width: 20px;
@@ -88,7 +89,24 @@ img {
   cursor: pointer;
 }
 
-.slider-controls label:hover, .slider-controls label:focus {}
+.slider-controls label::after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  vertical-align: top;
+  width: 20px;
+  height: 20px;
+  top: -2px;
+  left: -2px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  display: none;
+}
+
+.slider-controls label:hover::after, .slider-controls label:focus::after {
+  display: block;
+}
 
 #product-1:checked~.site-wrapper {
   background-color: #849d8f;
@@ -655,6 +673,7 @@ img {
 /* MAP сделан */
 
 .map {
+  position: relative;
   color: #323232;
   background-image: url("../img/map.jpg");
   background-position: 0 0;
@@ -667,15 +686,21 @@ img {
 }
 
 .map fieldset {
+  position: absolute;
+  top: 62px;
+  right: 27px;
   background-color: #fefdfd;
   border: none;
   border-radius: 15px;
+  width: 302px;
+  padding: 32px 25px;
 }
 
 .map .adress {
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
+  width: 150px;
 }
 
 .map .adress-details {
