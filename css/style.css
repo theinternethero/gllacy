@@ -70,7 +70,7 @@ img {
 
 .slider-controls {
   position: absolute;
-  bottom: 63px;
+  top: 450px;
   left: 0;
   z-index: 20;
   font-size: 0;
@@ -92,8 +92,6 @@ img {
 .slider-controls label::after {
   content: "";
   position: absolute;
-  display: inline-block;
-  vertical-align: top;
   width: 20px;
   height: 20px;
   top: -2px;
@@ -154,7 +152,6 @@ img {
 
 .main-navigation-wrapper {
   width: 100%;
-  margin-bottom: 20px;
 }
 
 .main-navigation-wrapper .container {
@@ -177,10 +174,15 @@ img {
 
 .user-navigation {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   margin-left: auto;
   width: 267px;
+}
+
+.main-menu-item:first-child {
+  padding: 10px 0px;
 }
 
 .main-menu-item a {
@@ -216,19 +218,17 @@ img {
 
 .submenu {
   position: absolute;
-  top: 57.5px;
+  top: 60px;
   background-color: rgb(248, 247, 244);
   box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
   border-radius: 5px;
   display: none;
+  overflow: hidden;
+  z-index: 1;
 }
 
 .main-menu-item:hover>.submenu {
   display: block;
-}
-
-.submenu-item {
-  padding: 10px 20px;
 }
 
 .submenu a {
@@ -236,19 +236,12 @@ img {
   font-weight: 400;
   color: #323232;
   text-decoration: none;
+  padding: 10px 20px;
 }
 
 .submenu svg {
   position: absolute;
   left: 10px;
-}
-
-.submenu-item:hover, .submenu-item:focus {
-  background-color: #fbded7;
-}
-
-.submenu-item:active {
-  background-color: #f6b5a5;
 }
 
 .submenu a:hover, .submenu a:focus {
@@ -263,7 +256,7 @@ img {
   background-color: #d07058;
 }
 
-.user-navigation a {
+.search-link a, .login-link>a, .cart-link a {
   display: block;
   position: relative;
   font-size: 14px;
@@ -278,61 +271,187 @@ img {
   border-radius: 25px;
 }
 
-.user-navigation a:focus, .user-navigation a:hover {
+.search-link a:focus, .login-link>a:focus, .cart-link a:focus, .search-link a:hover, .login-link>a:hover, .cart-link a:hover {
   background-color: #ffffff;
   color: #323232;
 }
 
-.modal-search fieldset {
-  width: 341px;
-  height: 84px;
+.search-link {
+  padding: 3px 0;
+}
+
+.search-link a {
+  position: relative;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background-image: url("../img/loupe.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.search-link a:hover, .search-link a:focus {
+  background-image: url("../img/loupe-hover.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.modal-search-hover {
   position: absolute;
+  z-index: 2;
+  display: none;
+  top: 60px;
+  transform: translateX(-309px);
+}
+
+.modal-search {
+  padding: 20px 15px;
+  margin: 0;
   background-color: #f8f7f4;
   box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
   border: none;
   border-radius: 6px;
-  display: none;
 }
 
-.search-link:hover .modal-search {
+.search-link:hover .modal-search-hover {
   display: block;
+}
+
+#user-search {
+  width: 311px;
+  box-sizing: border-box;
+  padding: 16px 14px;
+  border: 1px solid #999999;
+  border-radius: 6px;
 }
 
 .cart-link .button {
   position: relative;
-  padding-left: 44px;
+  padding-left: 45px;
 }
 
 .cart-link .button::before {
   content: "";
   position: absolute;
-  left: 10px;
+  top: 8px;
+  left: 16px;
   width: 21px;
   height: 20px;
-  background-image: url(../img/logo1.svg.png);
+  background-image: url("../img/cart.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
 }
 
-.modal-login fieldset {
+.cart-link .button::after {
+  content: "";
   position: absolute;
+  top: 8px;
+  left: 16px;
+  width: 21px;
+  height: 20px;
+  background-image: url("../img/hover.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.cart-link .button:hover::before, .cart-link .button:focus::before {
+  background-image: url("../img/cart-hover.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.modal-login-hover {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+  display: none;
+  top: 62px;
+  transform: translateX(-185px);
+}
+
+.modal-login {
   background-color: rgb(248, 247, 244);
   box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
   border: none;
   border-radius: 6px;
-  display: none;
+  padding: 20px;
 }
 
-.login-item {
+p.login-item {
+  margin: 0;
+  margin-bottom: 20px;
+  width: 241px;
+}
+
+p.password-item {
+  margin: 0;
+  margin-bottom: 20px;
+  width: 241px;
+}
+
+#user-login {
+  padding: 15px;
+  border: 1px solid #999999;
+  border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#user-password {
+  padding: 15px;
+  border: 1px solid #999999;
+  border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.password-item {
   margin: 0;
 }
 
-.login-link:hover .modal-login {
+.login-link {
+  padding: 3px 0;
+}
+
+.login-link>.button {
+  position: relative;
+  padding-left: 45px;
+}
+
+.login-link>.button::before {
+  content: "";
+  position: absolute;
+  width: 21px;
+  height: 19px;
+  background-image: url(../img/login.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  top: 8px;
+  left: 16px;
+}
+
+.login-link>.button:hover::before, .login-link>.button:focus::before {
+  background-image: url("../img/login-hover.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.login-link:hover .modal-login-hover {
   display: block;
 }
 
-.login-password-info li {
-  text-align: right;
+.modal-login-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.login-password-info {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .login-password-info a {
@@ -354,20 +473,21 @@ img {
   text-align: center;
   color: #fefefe;
   vertical-align: middle;
-  background-image: linear-gradient( 90deg, rgb(202, 56, 36) 0%, rgb(242, 104, 67) 100%);
-  box-shadow: 0px 2px 2px 0px rgba(85, 8, 0, 0.54);
+  background-image: linear-gradient(to bottom, #f26843 0%, #e74a35 100%);
+  box-shadow: 0px 2px 2px rgba(172, 16, 0, 0.64);
   border: none;
-  border-radius: 20px;
+  border-radius: 50px;
+  padding: 15px 25px;
 }
 
 .modal-login .button:hover, .modal-login .button:focus {
-  background-image: linear-gradient( 90deg, rgb(231, 74, 53) 0%, rgb(242, 104, 67) 100%);
-  box-shadow: 0px 1px 2px 0px rgba(172, 16, 0, 0.004);
+  background-image: linear-gradient(to bottom, #f58669 0%, #ec6f5e 100%);
+  box-shadow: 0px 2px 2px rgba(172, 16, 0, 1);
 }
 
 .modal-login .button:active {
-  background-image: linear-gradient( 90deg, rgb(242, 104, 67) 0%, rgb(231, 74, 53) 100%);
-  box-shadow: inset 0px 2px 2px 0px rgba(148, 39, 24, 0.004);
+  background-image: linear-gradient(to bottom, #d84732 0%, #e1613e 100%);
+  box-shadow: inset 0px 2px 2px rgba(172, 16, 0, 1);
 }
 
 .user-navigation input::placeholder, .user-navigation label {
@@ -390,6 +510,8 @@ img {
 .schedule .phone {
   font-size: 22px;
   line-height: 24px;
+  display: inline-block;
+  margin-top: 8px;
 }
 
 .slides-switches {
@@ -443,7 +565,8 @@ img {
 }
 
 .banners .banner-name {
-  margin-top: 0px;
+  margin: 0;
+  margin-bottom: 20px;
   font-size: 35px;
   line-height: 41px;
   font-weight: 700;
@@ -451,6 +574,7 @@ img {
 
 .banners .banner-info {
   margin: 0;
+  margin-bottom: 45px;
   font-size: 18px;
   font-weight: 700;
 }
@@ -462,6 +586,8 @@ img {
   background-position: 0 0;
   background-repeat: no-repeat;
   border-radius: 15px;
+  padding: 20px;
+  padding-right: 23px;
 }
 
 .banner-item:nth-child(1) {
@@ -479,21 +605,22 @@ img {
   text-align: center;
   color: #ffffff;
   vertical-align: middle;
-  background-image: linear-gradient( 90deg, rgb(202, 56, 36) 0%, rgb(242, 104, 67) 100%);
+  background-image: linear-gradient(to bottom, #f26843 0%, #e74a35 100%);
   opacity: 0.988;
-  box-shadow: 0px 2px 2px 0px rgba(85, 8, 0, 0.54);
+  box-shadow: 0px 2px 2px rgba(172, 16, 0, 0.64);
   border: none;
   border-radius: 20px;
+  padding: 15px 20px;
 }
 
 .banners .button:hover, .banners .button:hover:focus {
-  background-image: linear-gradient( 90deg, rgb(231, 74, 53) 0%, rgb(242, 104, 67) 100%);
-  box-shadow: 0px 1px 2px 0px rgba(172, 16, 0, 0.004);
+  background-image: linear-gradient(to bottom, #f58669 0%, #ec6f5e 100%);
+  box-shadow: 0px 2px 2px rgba(172, 16, 0, 1);
 }
 
 .banners .button:active {
-  background-image: linear-gradient( 90deg, rgb(242, 104, 67) 0%, rgb(231, 74, 53) 100%);
-  box-shadow: inset 0px 2px 2px 0px rgba(148, 39, 24, 0.004);
+  background-image: linear-gradient(to bottom, #d84732 0%, #e1613e 100%);
+  box-shadow: inset 0px 2px 2px rgba(172, 16, 0, 1);
 }
 
 .hits p {
