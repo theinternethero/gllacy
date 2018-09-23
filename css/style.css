@@ -206,8 +206,8 @@ img {
 .main-menu-item a:active {
   color: #333333;
   text-decoration: none;
-  background-color: #ededed;
-  box-shadow: inset 0px 2px 1px 0px rgba(105, 105, 105, 0.004);
+  background-color: rgba(248, 247, 244, 0.988);
+  box-shadow: inset 0 2px 1px #696969;
 }
 
 .main-menu-item a:hover, .main-menu-item a:focus {
@@ -277,7 +277,7 @@ img {
 }
 
 .search-link {
-  padding: 3px 0;
+  padding: 5px 0;
 }
 
 .search-link a {
@@ -301,7 +301,7 @@ img {
   position: absolute;
   z-index: 2;
   display: none;
-  top: 60px;
+  top: 62px;
   transform: translateX(-309px);
 }
 
@@ -323,7 +323,15 @@ img {
   box-sizing: border-box;
   padding: 16px 14px;
   border: 1px solid #999999;
-  border-radius: 6px;
+  border-radius: 5px;
+}
+
+#user-search:hover, #user-search:focus {
+  box-shadow: 0 0 0 1pt rgb(154, 154, 154);
+}
+
+#user-search:active {
+  box-shadow: 0 0 0 1pt rgb(46, 136, 228);
 }
 
 .cart-link .button {
@@ -399,12 +407,24 @@ p.password-item {
   box-sizing: border-box;
 }
 
+#user-login:hover, #user-login:focus {
+  box-shadow: 0 0 0 1pt rgb(154, 154, 154);
+}
+
+#user-login:active {
+  box-shadow: 0 0 0 1pt rgb(46, 136, 228);
+}
+
 #user-password {
   padding: 15px;
   border: 1px solid #999999;
   border-radius: 6px;
   width: 100%;
   box-sizing: border-box;
+}
+
+#user-password:hover, #user-password:focus {
+  box-shadow: 0 0 0 1pt rgb(154, 154, 154);
 }
 
 .password-item {
@@ -467,6 +487,7 @@ p.password-item {
 }
 
 .modal-login .button {
+  display: inline-block;
   font-size: 18px;
   line-height: 24px;
   font-weight: 700;
@@ -561,6 +582,7 @@ p.password-item {
 
 .banner-list {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -574,46 +596,53 @@ p.password-item {
 
 .banners .banner-info {
   margin: 0;
-  margin-bottom: 45px;
+  margin-bottom: 25px;
   font-size: 18px;
   font-weight: 700;
 }
 
 .banner-item {
-  width: 560px;
-  min-height: 229px;
+  width: 518px;
   background-size: 560px 229px;
   background-position: 0 0;
   background-repeat: no-repeat;
   border-radius: 15px;
-  padding: 20px;
-  padding-right: 23px;
+  padding-top: 23px;
+  padding-bottom: 20px;
+  padding-right: 22px;
+  padding-left: 20px;
+  margin-bottom: 40px;
 }
 
-.banner-item:nth-child(1) {
+.banner-item:nth-child(2n+1) {
   background-image: url(../img/banner-background-1.jpg);
+  background-color: #590c1b;
 }
 
-.banner-item:nth-child(2) {
+.banner-item:nth-child(2n) {
   background-image: url(../img/banner-background-2.jpg);
+  background-color: #41271b;
 }
 
 .banners .button {
+  display: inline-block;
+  vertical-align: middle;
   font-size: 18px;
   line-height: 24px;
   font-weight: 700;
   text-align: center;
   color: #ffffff;
-  vertical-align: middle;
   background-image: linear-gradient(to bottom, #f26843 0%, #e74a35 100%);
   opacity: 0.988;
   box-shadow: 0px 2px 2px rgba(172, 16, 0, 0.64);
   border: none;
-  border-radius: 20px;
-  padding: 15px 20px;
+  border-radius: 50px;
+  padding: 9px 22px 13px;
+  float: right;
+  cursor: pointer;
 }
 
-.banners .button:hover, .banners .button:hover:focus {
+.banners .button:hover, .banners .button:focus {
   background-image: linear-gradient(to bottom, #f58669 0%, #ec6f5e 100%);
   box-shadow: 0px 2px 2px rgba(172, 16, 0, 1);
 }
@@ -629,20 +658,38 @@ p.password-item {
 
 .hits-list {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  /*    justify-content: space-between;*/
+  width: 1146px;
 }
 
 .hits-list-item {
+  position: relative;
   width: 267px;
+  display: flex;
+  flex-direction: column;
+  margin-right: 26px;
 }
 
-.hits h3 {
-  font: inherit;
-  text-decoration: underline;
-  text-align: center;
+.hits-list-item:nth-child(4) {
+  margin-right: 0;
 }
+
+/*
+.hits-list-item:hover, .hits-list-item:focus {
+  background-color: rgba(248, 247, 244, 0.2);
+  box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+}
+*/
 
 .hits-list-item .button {
+  /*
+  position: absolute;
+  top: 340px;
+*/
+  align-self: center;
+  width: 200px;
   font: inherit;
   font-size: 18px;
   line-height: 24px;
@@ -651,24 +698,59 @@ p.password-item {
   color: #fefefe;
   vertical-align: middle;
   text-decoration: none;
-  background-image: linear-gradient( 90deg, rgb(231, 74, 53) 0%, rgb(242, 104, 67) 100%);
-  box-shadow: 0px 1px 2px 0px rgba(172, 16, 0, 0.004);
+  background-image: linear-gradient(to bottom, #f26843 0%, #e74a35 100%);
+  box-shadow: 0px 2px 2px rgba(172, 16, 0, 0.64);
   border: none;
-  border-radius: 20px;
+  border-radius: 50px;
+  padding: 14px 17px;
+  display: none;
 }
 
-/* НЕ РАБОТАЕТ */
+/*
+.hits-list-item:hover .button, .hits-list-item:focus .button {
+  display: block;
+}
+*/
+
+.hits-list-item p:first-of-type {
+  order: -1;
+  /*  margin-top: 7px;*/
+  width: 267px;
+  height: 267px;
+  align-self: center;
+}
+
+.hits-list-item p:nth-of-type(2) {
+  position: absolute;
+  top: 221px;
+  font-size: 0;
+}
+
+.hits-list-item::before {
+  content: url(../img/hit.svg);
+  top: 7px;
+  position: absolute;
+  width: 61px;
+  height: 61px;
+  border-radius: 50%;
+}
+
+.hits h3 {
+  font: inherit;
+  text-decoration: underline;
+  text-align: center;
+  margin: 0;
+  margin-top: 10px;
+}
 
 .hits-list-item .button:hover, .hits-list-item .button:focus {
-  /* Допилить градиент, он не меняется */
-  box-shadow: 0px 2px 2px 0px rgba(172, 16, 0, 0.004);
+  background-image: linear-gradient(to bottom, #f58669 0%, #ec6f5e 100%);
+  box-shadow: 0px 2px 2px rgba(172, 16, 0, 1);
 }
 
-/* НЕ РАБОТАЕТ */
-
 .hits-list-item .button:active {
-  background-image: linear-gradient( 90deg, rgb(242, 104, 67) 0%, rgb(231, 74, 53) 100%);
-  box-shadow: inset 0px 2px 2px 0px rgba(148, 39, 24, 0.004);
+  background-image: linear-gradient(to bottom, #d84732 0%, #e1613e 100%);
+  box-shadow: inset 0px 2px 2px rgba(172, 16, 0, 1);
 }
 
 .hits-list b {
@@ -688,17 +770,22 @@ p.password-item {
 .hits-list img {
   width: 267px;
   height: 267px;
-  border-radius: 150px 150px;
+  border-radius: 50%;
 }
 
 .seo {
   margin-bottom: 40px;
+  min-height: 220px;
   max-width: 1146px;
+  background-color: #d9d2bc;
   background-image: url(../img/waffly.jpg);
   background-position: top center;
   background-repeat: no-repeat;
-  min-height: 306px;
+  /* min-height: 306px; */
   border-radius: 15px;
+  padding-top: 25px;
+  padding-left: 20px;
+  padding-bottom: 22px;
 }
 
 .seo p {
@@ -706,10 +793,44 @@ p.password-item {
 }
 
 .seo h2 {
+  margin: 0;
+  margin-bottom: 20px;
   font-size: 24px;
   line-height: 30px;
   text-align: left;
   color: #323232;
+}
+
+.seo-features-list {
+  width: 560px;
+  margin-right: 26px;
+}
+
+.seo-features-item {
+  position: relative;
+}
+
+.seo-features-item::before {
+  content: "";
+  position: absolute;
+  width: 49px;
+  height: 49px;
+  background: url("../img/ice-cream.svg") center center no-repeat;
+  left: 0px;
+  top: -16px;
+}
+
+.seo-features-list li {
+  margin-bottom: 25px;
+  padding-left: 57px;
+}
+
+.seo-features-list li:last-child {
+  margin-bottom: 0px;
+}
+
+.seo-container {
+  display: flex;
 }
 
 .seo-features-item p {
@@ -718,44 +839,77 @@ p.password-item {
 }
 
 .blog-container {
+  flex-wrap: wrap;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 40px;
 }
 
 .blog-info, .appointment-info, .dispatch-item, .adress, .phone, .time, .footer-copyright {
   margin: 0;
 }
 
+.blog-info {
+  margin-bottom: 10px;
+}
+
 .blog {
+  min-height: 200px;
   color: #323232;
+  background-color: #fff;
   background-image: url(../img/blog.jpg);
   background-position: 0 0;
   background-repeat: no-repeat;
-  width: 560px;
-  min-height: 220px;
+  width: 540px;
   border-radius: 15px;
+  padding-top: 20px;
+  padding-left: 20px;
+  margin-bottom: 40px;
 }
 
 .blog a {
+  display: block;
   font-size: 24px;
   line-height: 30px;
   font-weight: 700;
   color: #323232;
+  width: 286px;
 }
 
 /* ЗДЕСЬ НАДО КАРТИНКУ СДЕЛАТЬ */
 
 .appointment {
+  background-color: #fff;
   background-image: url(../img/email-bg.png);
   background-position: 0 0;
   background-repeat: no-repeat;
-  width: 560px;
-  min-height: 220px;
+  width: 510px;
   border-radius: 15px;
+  min-height: 185px;
+  padding-top: 35px;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-bottom: 40px;
+}
+
+#user-email {
+  width: 368px;
+  box-sizing: border-box;
+  padding: 15px;
+  border: 1px solid #999999;
+  border-radius: 5px;
+}
+
+#user-email:hover, #user-email:focus {
+  box-shadow: 0 0 0 1pt rgb(154, 154, 154);
+}
+
+#user-email:active {
+  box-shadow: 0 0 0 1pt rgb(46, 136, 228);
 }
 
 .appointment-info {
+  margin: 0;
+  margin-bottom: 38px;
   color: #5a5a5a;
   font-weight: 400;
 }
@@ -776,25 +930,34 @@ p.password-item {
   vertical-align: middle;
 }
 
+.dispatch-item {
+  display: inline-block;
+}
+
 .appointment .button {
+  display: inline-block;
   font-size: 18px;
   font-weight: 700;
   line-height: 24px;
   color: #fefefe;
   text-align: center;
   vertical-align: middle;
-  background-image: linear-gradient( 90deg, rgb(231, 74, 53) 0%, rgb(242, 104, 67) 100%);
-  box-shadow: 0px 2px 2px 0px rgba(172, 16, 0, 0.64);
+  background-image: linear-gradient(to bottom, #f26843 0%, #e74a35 100%);
+  box-shadow: 0px 2px 2px rgba(172, 16, 0, 0.64);
+  margin-left: 7px;
+  border: none;
+  border-radius: 50px;
+  padding: 15px 19px;
 }
 
 .appointment .button:hover, .appointment .button:focus {
-  /* Градиент залить */
-  box-shadow: 0px 2px 2px 0px rgba(172, 16, 0, 0.004);
+  background-image: linear-gradient(to bottom, #f58669 0%, #ec6f5e 100%);
+  box-shadow: 0px 2px 2px rgba(172, 16, 0, 1);
 }
 
 .appointment .button:active {
-  background-image: linear-gradient( 90deg, rgb(242, 104, 67) 0%, rgb(231, 74, 53) 100%);
-  box-shadow: inset 0px 2px 2px 0px rgba(148, 39, 24, 0.004);
+  background-image: linear-gradient(to bottom, #d84732 0%, #e1613e 100%);
+  box-shadow: inset 0px 2px 2px rgba(172, 16, 0, 1);
 }
 
 /* MAP сделан */
