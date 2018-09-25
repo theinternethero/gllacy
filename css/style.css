@@ -45,10 +45,14 @@ img {
 
 .site-wrapper::before {
   background-image: url("../img/slider-2.png");
+  background-repeat: no-repeat;
+  background-position: top center;
 }
 
 .site-wrapper::after {
   background-image: url("../img/slider-3.png");
+  background-repeat: no-repeat;
+  background-position: top center;
 }
 
 .container {
@@ -504,11 +508,13 @@ p.password-item {
 .modal-login .button:hover, .modal-login .button:focus {
   background-image: linear-gradient(to bottom, #f58669 0%, #ec6f5e 100%);
   box-shadow: 0px 2px 2px rgba(172, 16, 0, 1);
+  outline: none;
 }
 
 .modal-login .button:active {
   background-image: linear-gradient(to bottom, #d84732 0%, #e1613e 100%);
   box-shadow: inset 0px 2px 2px rgba(172, 16, 0, 1);
+  outline: none;
 }
 
 .user-navigation input::placeholder, .user-navigation label {
@@ -645,11 +651,13 @@ p.password-item {
 .banners .button:hover, .banners .button:focus {
   background-image: linear-gradient(to bottom, #f58669 0%, #ec6f5e 100%);
   box-shadow: 0px 2px 2px rgba(172, 16, 0, 1);
+  outline: none;
 }
 
 .banners .button:active {
   background-image: linear-gradient(to bottom, #d84732 0%, #e1613e 100%);
   box-shadow: inset 0px 2px 2px rgba(172, 16, 0, 1);
+  outline: none;
 }
 
 .hits p {
@@ -659,7 +667,6 @@ p.password-item {
 .hits-list {
   display: flex;
   flex-wrap: wrap;
-  /*    justify-content: space-between;*/
   width: 1146px;
 }
 
@@ -669,61 +676,7 @@ p.password-item {
   display: flex;
   flex-direction: column;
   margin-right: 26px;
-}
-
-.hits-list-item:nth-child(4) {
-  margin-right: 0;
-}
-
-/*
-.hits-list-item:hover, .hits-list-item:focus {
-  background-color: rgba(248, 247, 244, 0.2);
-  box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
-  border-radius: 5px;
-}
-*/
-
-.hits-list-item .button {
-  /*
-  position: absolute;
-  top: 340px;
-*/
-  align-self: center;
-  width: 200px;
-  font: inherit;
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: 700;
-  text-align: center;
-  color: #fefefe;
-  vertical-align: middle;
-  text-decoration: none;
-  background-image: linear-gradient(to bottom, #f26843 0%, #e74a35 100%);
-  box-shadow: 0px 2px 2px rgba(172, 16, 0, 0.64);
-  border: none;
-  border-radius: 50px;
-  padding: 14px 17px;
-  display: none;
-}
-
-/*
-.hits-list-item:hover .button, .hits-list-item:focus .button {
-  display: block;
-}
-*/
-
-.hits-list-item p:first-of-type {
-  order: -1;
-  /*  margin-top: 7px;*/
-  width: 267px;
-  height: 267px;
-  align-self: center;
-}
-
-.hits-list-item p:nth-of-type(2) {
-  position: absolute;
-  top: 221px;
-  font-size: 0;
+  margin-bottom: 40px;
 }
 
 .hits-list-item::before {
@@ -735,7 +688,61 @@ p.password-item {
   border-radius: 50%;
 }
 
+.hits-list-item:nth-child(4n) {
+  margin-right: 0;
+}
+
+.hits-list-item:hover p:first-of-type, .hits-list-item:focus p:first-of-type {
+  position: relative;
+  z-index: 2;
+}
+
+.hits-list-item:hover::before, .hits-list-item:focus::before {
+  z-index: 3;
+}
+
+.hits-list-item:hover p:nth-of-type(2), .hits-list-item:focus p:nth-of-type(2) {
+  z-index: 2;
+}
+
+.hits-list-item:hover h3, .hits-list-item:focus h3 {
+  z-index: 2;
+}
+
+.hits-list-item:hover .hit-wrapper, .hits-list-item:focus .hit-wrapper {
+  background-color: rgba(248, 247, 244, 0.2);
+  box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  display: block;
+}
+
+.hit-wrapper {
+  position: absolute;
+  top: -6px;
+  left: -13px;
+  width: 293px;
+  min-height: 385px;
+  display: none;
+  padding-bottom: 20px;
+  z-index: 1;
+}
+
+.hits-list-item p:first-of-type {
+  order: -1;
+  /*  margin-top: 7px;*/
+  width: 267px;
+  height: 267px;
+  align-self: center;
+}
+
+.hits-list-item p:nth-of-type(2) {
+  position: absolute;
+  top: 214px;
+  font-size: 0;
+}
+
 .hits h3 {
+  position: relative;
   font: inherit;
   text-decoration: underline;
   text-align: center;
@@ -743,14 +750,15 @@ p.password-item {
   margin-top: 10px;
 }
 
-.hits-list-item .button:hover, .hits-list-item .button:focus {
-  background-image: linear-gradient(to bottom, #f58669 0%, #ec6f5e 100%);
-  box-shadow: 0px 2px 2px rgba(172, 16, 0, 1);
+.hits h3:hover, .hits h3:focus {
+  color: #ffbc9e;
+  cursor: pointer;
 }
 
-.hits-list-item .button:active {
-  background-image: linear-gradient(to bottom, #d84732 0%, #e1613e 100%);
-  box-shadow: inset 0px 2px 2px rgba(172, 16, 0, 1);
+.hits-list img {
+  width: 267px;
+  height: 267px;
+  border-radius: 50%;
 }
 
 .hits-list b {
@@ -767,10 +775,35 @@ p.password-item {
   text-shadow: 0px 1px 3px rgba(49, 50, 53, 0.5);
 }
 
-.hits-list img {
-  width: 267px;
-  height: 267px;
-  border-radius: 50%;
+.hits-list-item .button {
+  display: inline-block;
+  vertical-align: middle;
+  position: absolute;
+  bottom: 19px;
+  left: 30px;
+  width: 200px;
+  font: inherit;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+  text-align: center;
+  color: #fefefe;
+  text-decoration: none;
+  background-image: linear-gradient(to bottom, #f26843 0%, #e74a35 100%);
+  box-shadow: 0px 2px 2px rgba(172, 16, 0, 0.64);
+  border: none;
+  border-radius: 50px;
+  padding: 14px 17px;
+}
+
+.hits-list-item .button:hover, .hits-list-item .button:focus {
+  background-image: linear-gradient(to bottom, #f58669 0%, #ec6f5e 100%);
+  box-shadow: 0px 2px 2px rgba(172, 16, 0, 1);
+}
+
+.hits-list-item .button:active {
+  background-image: linear-gradient(to bottom, #d84732 0%, #e1613e 100%);
+  box-shadow: inset 0px 2px 2px rgba(172, 16, 0, 1);
 }
 
 .seo {
@@ -815,9 +848,24 @@ p.password-item {
   position: absolute;
   width: 49px;
   height: 49px;
-  background: url("../img/ice-cream.svg") center center no-repeat;
   left: 0px;
   top: -16px;
+}
+
+.seo-features-list:nth-child(2n+1) .seo-features-item:nth-child(2n+1)::before {
+  background: url("../img/ice-cream.svg") center center no-repeat;
+}
+
+.seo-features-list:nth-child(2n+1) .seo-features-item:nth-child(2n)::before {
+  background: url("../img/eco.svg") center center no-repeat;
+}
+
+.seo-features-list:nth-child(2n) .seo-features-item:nth-child(2n+1)::before {
+  background: url("../img/cow.svg") center center no-repeat;
+}
+
+.seo-features-list:nth-child(2n) .seo-features-item:nth-child(2n)::before {
+  background: url("../img/thermometer.svg") center center no-repeat;
 }
 
 .seo-features-list li {
@@ -953,11 +1001,13 @@ p.password-item {
 .appointment .button:hover, .appointment .button:focus {
   background-image: linear-gradient(to bottom, #f58669 0%, #ec6f5e 100%);
   box-shadow: 0px 2px 2px rgba(172, 16, 0, 1);
+  outline: none;
 }
 
 .appointment .button:active {
   background-image: linear-gradient(to bottom, #d84732 0%, #e1613e 100%);
   box-shadow: inset 0px 2px 2px rgba(172, 16, 0, 1);
+  outline: none;
 }
 
 /* MAP сделан */
@@ -965,41 +1015,50 @@ p.password-item {
 .map {
   position: relative;
   color: #323232;
+  background-color: #fff;
   background-image: url("../img/map.jpg");
   background-position: 0 0;
   background-repeat: no-repeat;
   width: 1200px;
   height: 430px;
   margin: 0 auto;
-  margin-bottom: 35px;
+  /* margin-bottom: 35px; */
   padding: 0;
 }
 
 .map fieldset {
+  padding: 0;
+  margin: 0;
   position: absolute;
   top: 62px;
   right: 27px;
   background-color: #fefdfd;
   border: none;
   border-radius: 15px;
-  width: 302px;
+  width: 238px;
   padding: 32px 25px;
 }
 
 .map .adress {
+  margin: 0;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
   width: 150px;
+  margin-bottom: 9px;
 }
 
 .map .adress-details {
+  display: block;
   font-size: 18px;
   line-height: 24px;
   font-weight: 700;
+  margin-bottom: 20px;
 }
 
 .map .phone {
+  margin: 0;
+  margin-bottom: 8px;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
@@ -1011,32 +1070,38 @@ p.password-item {
 }
 
 .map .time {
+  margin: 0;
+  margin-bottom: 20px;
   font-size: 14px;
   font-weight: 400;
 }
 
 .map button {
+  display: inline-block;
   font: inherit;
   font-size: 18px;
   line-height: 24px;
   font-weight: 700;
   text-align: center;
   color: #fefefe;
-  vertical-align: middle;
-  background-image: linear-gradient( 90deg, rgb(231, 74, 53) 0%, rgb(242, 104, 67) 100%);
-  box-shadow: 0px 2px 2px 0px rgba(172, 16, 0, 0.64);
+  vertical-align: top;
+  background-image: linear-gradient(to bottom, #f26843 0%, #e74a35 100%);
+  box-shadow: 0px 2px 2px rgba(172, 16, 0, 0.64);
   border: none;
-  border-radius: 15px;
+  border-radius: 50px;
+  padding: 11px 20px;
 }
 
 .map button:focus, .map button:hover {
-  /* Допилить градиент, он не меняется */
-  box-shadow: 0px 2px 2px 0px rgba(172, 16, 0, 0.004);
+  background-image: linear-gradient(to bottom, #f58669 0%, #ec6f5e 100%);
+  box-shadow: 0px 2px 2px rgba(172, 16, 0, 1);
+  outline: none;
 }
 
 .map button:active {
-  background-image: linear-gradient( 90deg, rgb(242, 104, 67) 0%, rgb(231, 74, 53) 100%);
-  box-shadow: inset 0px 2px 2px 0px rgba(148, 39, 24, 0.004);
+  background-image: linear-gradient(to bottom, #d84732 0%, #e1613e 100%);
+  box-shadow: inset 0px 2px 2px rgba(172, 16, 0, 1);
+  outline: none;
 }
 
 /* footer сделан */
@@ -1046,6 +1111,8 @@ p.password-item {
   padding: 0 27px;
   justify-content: space-between;
   display: flex;
+  min-height: 103px;
+  align-items: center;
 }
 
 .footer-social {
@@ -1056,16 +1123,37 @@ p.password-item {
   margin: 0;
   padding: 0;
   list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 185px;
 }
 
 .social-button {
+  display: block;
   font: inherit;
   color: #ffffff;
   text-decoration: none;
+  width: 32px;
+  height: 32px;
+  border: 3px solid rgba(255, 255, 255, 0.502);
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
+.social-button:hover, .social-button:focus {
+  opacity: 1;
+  border: 3px solid rgba(255, 255, 255, 0.702);
+}
+
+.social-button:active svg {
+  opacity: 0.8;
 }
 
 .footer-links {
-  width: 560px;
+  width: 326px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .footer-links ul {
@@ -1075,6 +1163,7 @@ p.password-item {
 }
 
 .footer-links a {
+  position: relative;
   font-size: 13px;
   font-weight: 400;
   line-height: 18px;
@@ -1085,19 +1174,27 @@ p.password-item {
   color: #ffbc9e;
 }
 
-.footer-link img {
-  width: 15px;
-  height: 13px;
-}
-
 .footer-copyright {
   margin: 0;
-  width: 267px;
+  width: 190px;
+  color: #fefefe;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
 }
 
 .footer-logo img {
   width: 108px;
   height: 39px;
+}
+
+.footer-links ul:first-child li:first-child a::before {
+  position: absolute;
+  content: url(../img/heart.svg);
+  width: 15px;
+  height: 13px;
+  top: 2px;
+  left: -20px;
 }
 
 /* СДЕЛАНО НИЖЕ */
