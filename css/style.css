@@ -9,6 +9,7 @@ body {
   font-weight: 500;
   color: #ffffff;
   min-width: 1200px;
+  background-color: #87a092;
 }
 
 .visually-hidden:not(:focus):not(:active), input[type="checkbox"].visually-hidden, input[type="radio"].visually-hidden {
@@ -36,6 +37,7 @@ img {
   background-repeat: no-repeat;
   background-position: top center;
   transition: background-image 0.5s ease, background-color 0.5s ease;
+  /* min-height: 100vh */
 }
 
 .site-wrapper::before, .site-wrapper::after {
@@ -203,19 +205,20 @@ img {
   border-radius: 20px;
 }
 
-.main-menu-item-current {
-  text-align: center;
+.main-menu-item-current>a {
+  cursor: text;
+  background-color: rgb(208, 112, 88);
   text-decoration: none;
 }
 
-.main-menu-item a:active {
+.main-menu-item:not(.main-menu-item-current) a:active {
   color: #333333;
   text-decoration: none;
   background-color: rgba(248, 247, 244, 0.988);
   box-shadow: inset 0 2px 1px #696969;
 }
 
-.main-menu-item a:hover, .main-menu-item a:focus {
+.main-menu-item:not(.main-menu-item-current) a:hover, .main-menu-item:not(.main-menu-item-current) a:focus {
   color: #333333;
   text-decoration: none;
   background-color: #ededed;
@@ -236,7 +239,7 @@ img {
   display: block;
 }
 
-.submenu a {
+.submenu-item a {
   display: block;
   font-weight: 400;
   color: #323232;
@@ -249,16 +252,18 @@ img {
   left: 10px;
 }
 
-.submenu a:hover, .submenu a:focus {
+.submenu-item:not(.submenu-item-current) a:hover, .submenu-item:not(.submenu-item-current) a:focus {
   background-color: #fbded7;
 }
 
-.submenu a:active {
+.submenu-item:not(.submenu-item-current) a:active {
   background-color: #f6b5a5;
 }
 
-.submenu-item-current {
+.submenu-item-current a {
   background-color: #d07058;
+  cursor: text;
+  color: #fff;
 }
 
 .search-link a, .login-link>a, .cart-link a {
@@ -342,6 +347,15 @@ img {
 .cart-link .button {
   position: relative;
   padding-left: 45px;
+}
+
+.modal-cart {
+  position: absolute;
+  display: none;
+}
+
+.cart-link:hover .modal-cart {
+  display: block;
 }
 
 .cart-link .button::before {
@@ -504,6 +518,7 @@ p.password-item {
   border: none;
   border-radius: 50px;
   padding: 15px 25px;
+  cursor: pointer;
 }
 
 .modal-login .button:hover, .modal-login .button:focus {
@@ -527,6 +542,12 @@ p.password-item {
   /* Нужно задать рамку placeholder'у + прописать focus/hover/acive */
 }
 
+.bread-schedule {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
 .schedule p {
   margin: 0;
   font-size: 14px;
@@ -540,6 +561,200 @@ p.password-item {
   line-height: 24px;
   display: inline-block;
   margin-top: 8px;
+}
+
+.breadcrumbs {
+  width: 220px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 13px;
+}
+
+.breadcrumbs li {
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+}
+
+.breadcrumbs a {
+  color: #fff;
+}
+
+.breadcrumbs a:hover, .breadcrumbs a:focus, .breadcrumbs a:active {
+  color: #ffbc9e;
+}
+
+.breadcrumbs li:not(:last-child) {
+  position: relative;
+  margin-right: 20px;
+}
+
+.breadcrumbs li:not(:last-child)::before {
+  content: "»";
+  position: absolute;
+  left: 60px;
+}
+
+.page-title {
+  margin: 0;
+  font-size: 35px;
+  font-weight: 700;
+  line-height: 41px;
+  margin-bottom: 30px;
+}
+
+.filters {
+  margin-bottom: 40px;
+}
+
+.filter fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.filters legend {
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 15px;
+  margin-bottom: 6px;
+}
+
+.filter-sort {
+  display: inline-block;
+}
+
+.filter-range {
+  display: inline-block;
+}
+
+.filter-radio {
+  display: inline-block;
+}
+
+.filter-sort select {
+  width: 193px;
+  min-height: 36px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 25px;
+}
+
+.filter ul {
+  margin: 0;
+  padding: 0;
+  padding-left: 14px;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  line-height: 18px;
+  align-content: center;
+  align-items: center;
+}
+
+.filter ul li {
+  padding-left: 32px;
+  padding-right: 20px;
+}
+
+.filter ul li:last-child {
+  padding-right: 0px;
+}
+
+.filter-radio-list {
+  width: 415px;
+  min-height: 36px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 25px;
+}
+
+.filter-checkbox-list {
+  width: 690px;
+  min-height: 37px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 25px;
+}
+
+.filter-option label {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  user-select: none;
+}
+
+.filter-input-radio+label::before {
+  content: url("../img/radio-off.svg");
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  top: -3px;
+  left: -32px;
+  opacity: 0.8;
+}
+
+.filter-input-radio:checked+label::before {
+  content: url("../img/radio-on.svg");
+}
+
+.filter-input+label:hover::before {
+  opacity: 1;
+}
+
+.filter-input-checkbox+label::before {
+  content: url("../img/checkbox-off.svg");
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  top: -3px;
+  left: -32px;
+  opacity: 0.8;
+}
+
+.filter-input-checkbox:checked+label::before {
+  content: url("../img/checkbox-on.svg");
+  width: 27px;
+}
+
+.filter-button {
+  font: inherit;
+  line-height: 18px;
+  color: #ffffff;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: rgba(255, 255, 255, 0.188);
+  cursor: pointer;
+  padding: 8px 30px;
+  border: 2px solid #ffffff;
+  border-radius: 25px;
+  margin-top: 21px;
+}
+
+.filter-button:hover, .filter-button:focus {
+  color: #323232;
+  background-color: rgb(255, 255, 255);
+  outline: none;
+}
+
+.filter-button:active {
+  box-shadow: inset 0 2px 1px #696969;
+  background-color: #ededed;
+  outline: none;
+}
+
+.filter-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  width: 865px;
+  margin-top: 18px;
 }
 
 .slides-switches {
@@ -659,6 +874,10 @@ p.password-item {
   background-image: linear-gradient(to bottom, #d84732 0%, #e1613e 100%);
   box-shadow: inset 0px 2px 2px rgba(172, 16, 0, 1);
   outline: none;
+}
+
+.inner-page .hits {
+  margin-bottom: 80px;
 }
 
 .hits p {
@@ -805,6 +1024,55 @@ p.password-item {
 .hits-list-item .button:active {
   background-image: linear-gradient(to bottom, #d84732 0%, #e1613e 100%);
   box-shadow: inset 0px 2px 2px rgba(172, 16, 0, 1);
+}
+
+.pagination-list {
+  width: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-left: auto;
+  line-height: 18px;
+  margin-bottom: 30px;
+}
+
+.pagination-item a {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  width: 25px;
+  height: 25px;
+  border: none;
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 25px;
+  margin-right: 4px;
+}
+
+.pagination-item:not(:first-child):not(.pagination-item-current) a:hover, .pagination-item:not(:first-child):not(.pagination-item-current) a:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.pagination-item:not(:first-child):not(.pagination-item-current) a:active {
+  color: #000;
+  background-color: rgb(255, 255, 255);
+}
+
+.pagination-item:first-child a {
+  transform: scaleX(-1);
+  cursor: text;
+}
+
+.pagination-item:last-child a {
+  margin-right: 0px;
+}
+
+.pagination-item-current a {
+  color: #000;
+  background-color: rgb(255, 255, 255);
 }
 
 .seo {
@@ -997,6 +1265,7 @@ p.password-item {
   border: none;
   border-radius: 50px;
   padding: 15px 19px;
+  cursor: pointer;
 }
 
 .appointment .button:hover, .appointment .button:focus {
@@ -1025,15 +1294,6 @@ p.password-item {
   margin: 0 auto;
   /* margin-bottom: 35px; */
   padding: 0;
-}
-
-.map::before {
-  position: absolute;
-  content: url("../img/pin.svg");
-  width: 80px;
-  height: 140px;
-  top: 75px;
-  left: 425px;
 }
 
 .map fieldset {
@@ -1100,6 +1360,7 @@ p.password-item {
   border: none;
   border-radius: 50px;
   padding: 11px 20px;
+  cursor: pointer;
 }
 
 .map button:focus, .map button:hover {
@@ -1123,6 +1384,7 @@ p.password-item {
   display: flex;
   min-height: 103px;
   align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .footer-social {
