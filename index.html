@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic-ext" rel="stylesheet">
   <link href="css/normalize.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -246,8 +247,10 @@
         </div>
       </div>
       <section class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d2826.39720994496!2d30.32876111369067!3d59.93936613213159!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1530251851754" width="1200" height="430"></iframe>
         <fieldset>
           <legend class="visually-hidden">Контактная информация</legend>
+
           <p class="adress">Адрес главного офиса и офлайн-магазина:</p>
           <strong class="adress-details">ул. Большая Конюшенная 19/8, Санкт-Петербург</strong>
           <p class="phone">Для заказов по телефону:</p>
@@ -256,7 +259,7 @@
           <p class="time">
             (с 10 до 20 ежедневно)
           </p>
-          <button>Форма обратной связи</button>
+          <button class="feedback-link" type="button">Форма обратной связи</button>
         </fieldset>
       </section>
 
@@ -315,20 +318,22 @@
     <form class="feedback-form" action="echo.htmlacademy.ru" method="post">
       <p class="name-item">
         <label class="visually-hidden" for="user-name">Имя</label>
-        <input class="name-icon-user" id="user-name" type="text" name="name" value="" placeholder="Как вам зовут?">
+        <input class="name-user" id="user-name" type="text" name="login" placeholder="Как вам зовут?">
       </p>
       <p class="email-item">
         <label class="visually-hidden" for="feedback-email">Почта</label>
-        <input class="email-icon-user" id="feedback-email" type="email" name="email" value="" placeholder="Ваша почта для ответа?">
+        <input class="email-user" id="feedback-email" type="email" name="email" placeholder="Ваша почта для ответа?">
       </p>
       <p class="comment-item">
         <label class="visually-hidden" for="comment-field">Комментарий</label>
-        <textarea class="comment-icon-user" name="comment" id="comment-field" rows="7" cols="40" placeholder="Напишите что-нибудь..."></textarea>
+        <textarea class="comment-user" name="comment" id="comment-field" rows="7" cols="40" placeholder="Напишите что-нибудь..."></textarea>
       </p>
-      <button class="button" type="submit" value="">Отправить</button>
+      <button class="button" type="submit">Отправить</button>
     </form>
-    <button class="modal-close" type="button">Закрытие</span>
+    <button class="modal-close" type="button"><span class="visually-hidden">Закрытие</span>
     </section>
+    <div class="modal-overlay"></div>
+    <script src="js/popup.js"></script>
 </body>
 
 </html>

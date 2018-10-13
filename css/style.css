@@ -1,8 +1,6 @@
 body {
-  /* Начало обнуления */
   margin: 0;
   padding: 0;
-  /* Конец обнуления */
   font-family: "Roboto", Arial, sans-serif;
   font-size: 16px;
   line-height: 22px;
@@ -37,7 +35,6 @@ img {
   background-repeat: no-repeat;
   background-position: top center;
   transition: background-image 0.5s ease, background-color 0.5s ease;
-  /* min-height: 100vh */
 }
 
 .site-wrapper::before, .site-wrapper::after {
@@ -390,18 +387,6 @@ img {
   background-position: 0 0;
 }
 
-/* .cart-link>.button::after {
-  content: "";
-  position: absolute;
-  top: 8px;
-  left: 16px;
-  width: 21px;
-  height: 20px;
-  background-image: url("../img/hover.svg");
-  background-repeat: no-repeat;
-  background-position: 0 0;
-} */
-
 .cart-link>.button:hover::before, .cart-link>.button:focus::before {
   background-image: url("../img/cart-hover.svg");
   background-repeat: no-repeat;
@@ -459,6 +444,44 @@ img {
 
 .cart-price {
   margin: 0;
+  margin-bottom: 15px;
+  float: right;
+}
+
+.modal-cart .button {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+  color: #fefefe;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  background-image: linear-gradient(to bottom, #f26843 0%, #e74a35 100%);
+  box-shadow: 0px 2px 2px rgba(172, 16, 0, 0.64);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  float: right;
+  clear: both;
+}
+
+.modal-cart .button:hover, .modal-cart .button:focus {
+  background-image: linear-gradient(to bottom, #f58669 0%, #ec6f5e 100%);
+  box-shadow: 0px 2px 2px rgba(172, 16, 0, 1);
+  outline: none;
+}
+
+.modal-cart .button:active {
+  background-image: linear-gradient(to bottom, #d84732 0%, #e1613e 100%);
+  box-shadow: inset 0px 2px 2px rgba(172, 16, 0, 1);
+  outline: none;
+}
+
+.modal-cart .cart-list {
+  border-collapse: collapse;
+  border-bottom: 1px solid rgba(50, 50, 50, 0.3);
 }
 
 .modal-login-hover {
@@ -612,7 +635,6 @@ p.password-item {
   line-height: 24px;
   font-weight: 400;
   color: #999999;
-  /* Нужно задать рамку placeholder'у + прописать focus/hover/acive */
 }
 
 .bread-schedule {
@@ -706,7 +728,6 @@ p.password-item {
 .filter .filter-range {
   display: inline-block;
   vertical-align: top;
-  /* margin-right: 15px; */
   margin-right: 10px;
 }
 
@@ -1105,7 +1126,6 @@ select[name="sort"] option {
 
 .hits-list-item p:first-of-type {
   order: -1;
-  /*  margin-top: 7px;*/
   width: 267px;
   height: 267px;
   align-self: center;
@@ -1239,7 +1259,6 @@ select[name="sort"] option {
   background-image: url(../img/waffly.jpg);
   background-position: top center;
   background-repeat: no-repeat;
-  /* min-height: 306px; */
   border-radius: 15px;
   padding-top: 25px;
   padding-left: 20px;
@@ -1348,8 +1367,6 @@ select[name="sort"] option {
   width: 286px;
 }
 
-/* ЗДЕСЬ НАДО КАРТИНКУ СДЕЛАТЬ */
-
 .appointment {
   background-color: #fff;
   background-image: url(../img/email-bg.png);
@@ -1436,8 +1453,6 @@ select[name="sort"] option {
   outline: none;
 }
 
-/* MAP сделан */
-
 .map {
   position: relative;
   color: #323232;
@@ -1448,7 +1463,6 @@ select[name="sort"] option {
   width: 1200px;
   height: 430px;
   margin: 0 auto;
-  /* margin-bottom: 35px; */
   padding: 0;
 }
 
@@ -1457,8 +1471,13 @@ select[name="sort"] option {
   content: url(../img/pin.svg);
   width: 80px;
   height: 140px;
-  left: 500px;
-  top: 150px;
+  left: 265px;
+  top: 140px;
+}
+
+.map iframe {
+  position: relative;
+  z-index: 1;
 }
 
 .map fieldset {
@@ -1472,6 +1491,7 @@ select[name="sort"] option {
   border-radius: 15px;
   width: 238px;
   padding: 32px 25px;
+  z-index: 1;
 }
 
 .map .adress {
@@ -1539,8 +1559,6 @@ select[name="sort"] option {
   box-shadow: inset 0px 2px 2px rgba(172, 16, 0, 1);
   outline: none;
 }
-
-/* footer сделан */
 
 .main-footer .container {
   margin: 0 auto;
@@ -1634,9 +1652,39 @@ select[name="sort"] option {
   left: -20px;
 }
 
-/* СДЕЛАНО НИЖЕ */
+@keyframes bounce {
+  0% {
+    transform: translateY(-2000px);
+  }
+  70% {
+    transform: translateY(30px);
+  }
+  90% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-10px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(10px);
+  }
+}
 
 .modal-feedback {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -233.5px;
+  margin-top: -221px;
   padding: 25px;
   width: 417px;
   background-color: rgb(248, 247, 244);
@@ -1644,38 +1692,109 @@ select[name="sort"] option {
   background-position: 0 0;
   border: none;
   border-radius: 15px;
+  z-index: 2;
+  display: none;
 }
 
-.modal-feedback .form {
-  margin: 0;
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+}
+
+.modal-show {
+  display: block;
+}
+
+.modal-animation-show {
+  animation-name: bounce;
+  animation-duration: 0.6s;
+}
+
+.modal-error {
+  animation: shake 0.6s;
 }
 
 .modal-feedback h3 {
   margin: 0;
+  margin-bottom: 20px;
   font-size: 24px;
   font-weight: 700;
   line-height: 28px;
   color: #323232;
 }
 
-.feedback-form input, .feedback-form textarea {
+.feedback-form input[type="text"], .feedback-form input[type="email"], .feedback-form .comment-user {
   font: inherit;
   line-height: 24px;
-  color: #999999;
+  padding: 10px 14px;
   border: 1px solid #999999;
   border-radius: 5px;
 }
 
+.feedback-form input[type="text"]::placeholder, .feedback-form input[type="email"]::placeholder, .feedback-form .comment-user::placeholder {
+  color: #999999;
+}
+
+.feedback-form input[type="text"], .feedback-form input[type="email"] {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.feedback-form input[type="text"]:hover, .feedback-form input[type="email"]:hover, .feedback-form .comment-user:hover, .feedback-form input[type="text"]:focus, .feedback-form input[type="email"]:focus, .feedback-form .comment-user:focus {
+  box-shadow: 0 0 0 1pt rgb(154, 154, 154);
+}
+
 .name-item, .email-item {
   margin: 0;
-  /* width: 267px; */
-  /* min-height: 44px; */
+  margin-bottom: 20px;
+  width: 267px;
 }
 
 .comment-item {
   margin: 0;
-  /* width: 428px; */
-  /* min-height: 155px; */
+  margin-bottom: 25px;
+  width: 417px;
+}
+
+.comment-item .comment-user {
+  width: 100%;
+  height: 155px;
+  box-sizing: border-box;
+}
+
+.modal-feedback .modal-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  padding: 0;
+  width: 18px;
+  height: 18px;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.modal-feedback .modal-close::before, .modal-feedback .modal-close::after {
+  content: "";
+  position: absolute;
+  right: 0px;
+  width: 18px;
+  height: 2px;
+  background-color: #000000;
+}
+
+.modal-feedback .modal-close::before {
+  transform: rotate(45deg);
+}
+
+.modal-feedback .modal-close::after {
+  transform: rotate(-45deg);
 }
 
 .feedback-form .button {
@@ -1692,6 +1811,7 @@ select[name="sort"] option {
   border: none;
   border-radius: 50px;
   cursor: pointer;
+  float: right;
 }
 
 .feedback-form .button:hover, .feedback-form .button:focus {
