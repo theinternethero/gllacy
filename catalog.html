@@ -98,7 +98,7 @@
                 </fieldset>
               </section>
             </li>
-            <li class="cart-link">
+            <li class="cart-link cart-link-current">
               <a class="button" href="#">2 товара</a>
               <section class="modal modal-cart">
                 <form>
@@ -111,27 +111,34 @@
                       <td class="visually-hidden">Цена</td>
                     </tr>
                     <tr>
-                      <td><button class="cart-close" type="button"><img src="img/cross-small.svg" width="11" height="11" alt="Закрыть"></button></td>
+                      <td class="cart-item-close">
+                        <button class="cart-close" type="button"><span class="visually-hidden">Закрыть</span>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11"><path fill="#231F20" d="M10.979.728l-.708-.707L5.5 4.792.729.021.021.728 4.793 5.5.021 10.271l.707.708L5.5 6.207l4.771 4.772.708-.708L6.207 5.5z"/></svg>
+                        </button>
+                      </td>
                       <td class="cart-item-image">
                         <a><img src="img/product-icon-1.jpg" width="33" height="33" href="#" alt="Иконка товара в корзине"></a>
                       </td>
                       <td class="cart-item-name">Пломбир с апельсиновым джемом</td>
-                      <td class="cart-item-info">1,5 кг х 200 руб.</td>
+                      <td class="cart-item-info">1,5 кг х <span class="price-every">200 руб.</span></td>
                       <td class="cart-item-price">300 руб.</td>
                     </tr>
                     <tr>
-                      <td class="close"><a class="cart-close" href="#"><img src="img/cross-small.svg" width="11" height="11" alt="close"></a></td>
+                      <td class="cart-item-close">
+                        <button class="cart-close" type="button"><span class="visually-hidden">Закрыть</span>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11"><path fill="#231F20" d="M10.979.728l-.708-.707L5.5 4.792.729.021.021.728 4.793 5.5.021 10.271l.707.708L5.5 6.207l4.771 4.772.708-.708L6.207 5.5z"/></svg>
+                        </button>
+                      </td>
                       <td class="cart-item-image">
                         <a><img src="img/product-icon-2.jpg" width="33" height="33" href="#" alt="Иконка товара в корзине"></a>
                       </td>
                       <td class="cart-item-name">Клубничный пломбир с присыпкой из белого шоколада</td>
-                      <td class="cart-item-info">1,5 кг х 300 руб.</td>
+                      <td class="cart-item-info">1,5 кг х <span class="price-every">300 руб.</span></td>
                       <td class="cart-item-price">450 руб.</td>
                     </tr>
                   </table>
                   <p class="cart-price">Итого: <span class="price">750 руб.</span></p>
                   <a class="button" href="#">Оформить заказ</a>
-                  <!-- Здесь будет форма -->
                 </form>
               </section>
             </li>
@@ -157,7 +164,13 @@
         </fieldset>
         <fieldset class="filter-range">
           <legend>Цена: 100 руб. – 500 руб.</legend>
-          <input type="range" name="range">
+          <div class="range-controls">
+            <div class="scale">
+              <div class="bar"></div>
+            </div>
+            <div class="toggle toggle-min"></div>
+            <div class="toggle toggle-max"></div>
+          </div>
         </fieldset>
         <fieldset class="filter-radio">
           <legend>Жирность:</legend>
@@ -226,7 +239,7 @@
           </p>
           <p>
             <b>310 Р</b>
-            <span class="weight">кг</span>
+            <span class="weight">/кг</span>
           </p>
           <div class="hit-wrapper">
             <a class="button" href="#">Быстрый просмотр</a>
@@ -240,7 +253,7 @@
           </p>
           <p>
             <b>380 Р</b>
-            <span class="weight">кг</span>
+            <span class="weight">/кг</span>
           </p>
           <div class="hit-wrapper">
             <a class="button" href="#">Быстрый просмотр</a>
@@ -254,7 +267,7 @@
           </p>
           <p>
             <b>355 Р</b>
-            <span class="weight">кг</span>
+            <span class="weight">/кг</span>
           </p>
           <div class="hit-wrapper">
             <a class="button" href="#">Быстрый просмотр</a>
@@ -268,7 +281,7 @@
           </p>
           <p>
             <b>415 Р</b>
-            <span class="weight">кг</span>
+            <span class="weight">/кг</span>
           </p>
           <div class="hit-wrapper">
             <a class="button" href="#">Быстрый просмотр</a>
@@ -282,7 +295,7 @@
           </p>
           <p>
             <b>325 Р</b>
-            <span class="weight">кг</span>
+            <span class="weight">/кг</span>
           </p>
           <div class="hit-wrapper">
             <a class="button" href="#">Быстрый просмотр</a>
@@ -296,7 +309,7 @@
           </p>
           <p>
             <b>410 Р</b>
-            <span class="weight">кг</span>
+            <span class="weight">/кг</span>
           </p>
           <div class="hit-wrapper">
             <a class="button" href="#">Быстрый просмотр</a>
@@ -310,7 +323,7 @@
           </p>
           <p>
             <b>375 Р</b>
-            <span class="weight">кг</span>
+            <span class="weight">/кг</span>
           </p>
           <div class="hit-wrapper">
             <a class="button" href="#">Быстрый просмотр</a>
@@ -324,7 +337,7 @@
           </p>
           <p>
             <b>320 Р</b>
-            <span class="weight">кг</span>
+            <span class="weight">/кг</span>
           </p>
           <div class="hit-wrapper">
             <a class="button" href="#">Быстрый просмотр</a>
@@ -338,7 +351,7 @@
           </p>
           <p>
             <b>440 Р</b>
-            <span class="weight">кг</span>
+            <span class="weight">/кг</span>
           </p>
           <div class="hit-wrapper">
             <a class="button" href="#">Быстрый просмотр</a>
@@ -352,7 +365,7 @@
           </p>
           <p>
             <b>435 Р</b>
-            <span class="weight">кг</span>
+            <span class="weight">/кг</span>
           </p>
           <div class="hit-wrapper">
             <a class="button" href="#">Быстрый просмотр</a>
@@ -366,7 +379,7 @@
           </p>
           <p>
             <b>355 Р</b>
-            <span class="weight">кг</span>
+            <span class="weight">/кг</span>
           </p>
           <div class="hit-wrapper">
             <a class="button" href="#">Быстрый просмотр</a>
@@ -380,7 +393,7 @@
           </p>
           <p>
             <b>420 Р</b>
-            <span class="weight">кг</span>
+            <span class="weight">/кг</span>
           </p>
           <div class="hit-wrapper">
             <a class="button" href="#">Быстрый просмотр</a>
