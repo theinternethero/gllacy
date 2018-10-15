@@ -75,7 +75,7 @@ img {
   position: absolute;
   top: 450px;
   left: 0;
-  z-index: 20;
+  /* z-index: 20; */
   font-size: 0;
 }
 
@@ -1478,6 +1478,7 @@ select[name="sort"] option {
 .map iframe {
   position: relative;
   z-index: 1;
+  border: 0;
 }
 
 .map fieldset {
